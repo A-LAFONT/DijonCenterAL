@@ -7,29 +7,26 @@ import com.example.antoinelafont.dijoncenteral.Classes.POILocation;
 import com.example.antoinelafont.dijoncenteral.Classes.POIPosition;
 import com.example.antoinelafont.dijoncenteral.Classes.PointOfInterest;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Antoine LAFONT on 08/09/2017.
  */
 
-public class POIService extends AsyncTask<String, Void, Void> {
+public abstract class POIService extends AsyncTask<String, Void, ArrayList<PointOfInterest>> {
 
     public String myUrl;
-    public List<PointOfInterest> listOfPOI = new ArrayList<>();
 
     public POIService(String url) {
         myUrl = url;
     }
 
-    public List<PointOfInterest> getDataFromStream() {
+    public ArrayList<PointOfInterest> getDataFromStream() {
         try {
             URL url = new URL(myUrl);
             HttpURLConnection connection = (HttpURLConnection)url.openConnection();
@@ -38,7 +35,7 @@ public class POIService extends AsyncTask<String, Void, Void> {
 
             JsonReader reader = new JsonReader(new InputStreamReader(in));
 
-            List<PointOfInterest> listOfPOI = new ArrayList<>();
+            ArrayList<PointOfInterest> listOfPOI = new ArrayList<>();
 
             reader.beginArray();
             while (reader.hasNext()) {
@@ -151,14 +148,14 @@ public class POIService extends AsyncTask<String, Void, Void> {
     }
 
     @Override
-    protected Void doInBackground(String... params) {
+    protected  ArrayList<PointOfInterest> doInBackground(String... params) {
+        ArrayList<PointOfInterest> listOfPOI = null;
         try {
             listOfPOI = getDataFromStream();
-
-            return null;
         } catch (Exception e) {
-            return null;
+            listOfPOI =  null;
         }
-
+        return listOfPOI;
     }
+
 }
