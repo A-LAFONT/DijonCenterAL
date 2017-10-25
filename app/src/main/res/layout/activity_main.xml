@@ -8,6 +8,32 @@
     tools:context="com.example.antoinelafont.dijoncenteral.MainActivity"
     android:weightSum="1">
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:padding="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvLabelNumberPOI"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textColor="#2AB349"
+            android:textStyle="bold"
+            android:text="@string/number_of_poi"/>
+
+        <TextView
+            android:id="@+id/tvNumberPOI"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textColor="#2AB349"
+            android:textStyle="bold"
+            android:text="0"/>
+
+    </GridLayout>
+
     <ListView
         android:id="@+id/listViewPOI"
         android:layout_width="wrap_content"
@@ -19,6 +45,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:text="Créer un nouveau parcours"></Button>
+        android:text="@string/create_new_route"></Button>
 
 </LinearLayout>

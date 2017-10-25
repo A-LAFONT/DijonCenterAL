@@ -9,13 +9,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="Name" />
+        android:padding="5dp"
+        android:text="@string/name" />
 
 
     <TextView
         android:id="@+id/tvAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adress" />
+        android:padding="5dp"
+        android:text="@string/address" />
 
 </LinearLayout>

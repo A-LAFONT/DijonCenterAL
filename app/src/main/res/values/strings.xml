@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">DijonCenterAL</string>
+    <string name="app_name">Dijon Center A.L.</string>
+    <string name="create_new_route">Créer un nouveau parcours</string>
+    <string name="scheduled_for">Prévu pour le :</string>
+    <string name="choose_date">Choisir une date</string>
+    <string name="name">Nom</string>
+    <string name="address">Adresse</string>
+    <string name="number_of_poi">Nombre de POI :</string>
 </resources>

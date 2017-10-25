@@ -32,7 +32,9 @@ public class DetailActivity extends AppCompatActivity {
                 TextView tvCity = (TextView) findViewById(R.id.tvCity);
                 TextView tvAddress = (TextView) findViewById(R.id.tvAddress);
 
-                PointOfInterest poi = listOfPOI.get(i.getIntExtra("id", 0));
+                int id = (int)i.getLongExtra("id", 0);
+
+                PointOfInterest poi = listOfPOI.get(id);
 
                 tvName.setText(poi.name);
                 tvCity.setText(poi.location.city + ", ");
