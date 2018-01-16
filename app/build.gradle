@@ -1,9 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: "org.sonarqube"
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.example.antoinelafont.dijoncenteral"
         minSdkVersion 19
@@ -20,23 +18,15 @@ android {
     }
 }
 
-sonarqube {
-    properties {
-        property "sonar.projectName", "DijonCenterAL"
-        property "sonar.projectKey", "DijonCenterAL"
-        property "sonar.host.url", "http://localhost:9000"
-        property "sonar.projectVersion", "1.0"
-        property "sonar.language", "java"
-        property "sonar.sources", "src/main/"
-    }
-}
-
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+    implementation 'com.google.android.gms:play-services-maps:11.6.2'
+    implementation 'com.google.android.gms:play-services:11.6.2'
+    compile 'org.jetbrains:annotations-java5:15.0'
 }

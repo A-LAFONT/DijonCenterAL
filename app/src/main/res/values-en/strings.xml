@@ -2,9 +2,9 @@
 <resources>
     <string name="app_name">Dijon Center A.L.</string>
     <string name="create_new_route">Create new route</string>
-    <string name="scheduled_for">Scheduled for :</string>
+    <string name="scheduled_for">Scheduled for : </string>
     <string name="choose_date">Choose date</string>
     <string name="name">Name</string>
     <string name="address">Adress</string>
-    <string name="number_of_poi">Number of POI :</string>
+    <string name="number_of_poi">Number of POI : </string>
 </resources>
